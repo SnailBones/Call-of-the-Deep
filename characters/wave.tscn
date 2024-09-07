@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtgqta33ramso"]
+
+[ext_resource type="Texture2D" uid="uid://d05riu45xosh8" path="res://img/sub_small.png" id="2_qkj25"]
+[ext_resource type="AudioStream" uid="uid://bine1dhr768x" path="res://sounds/Sub Sonar Beep.mp3" id="3_j56sg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b4itm"]
+radius = 3.0
+
+[node name="Wave" type="CharacterBody2D"]
+
+[node name="SubTest1" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_qkj25")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_b4itm")
+
+[node name="Beep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_j56sg")
+bus = &"Delay"

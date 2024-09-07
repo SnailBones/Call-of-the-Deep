@@ -1,0 +1,44 @@
+[gd_resource type="AudioBusLayout" load_steps=5 format=3 uid="uid://d4dbv7sduihl3"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_nmmkb"]
+resource_name = "Reverb"
+
+[sub_resource type="AudioEffectPitchShift" id="AudioEffectPitchShift_mnhrq"]
+resource_name = "PitchShift"
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_kiq08"]
+resource_name = "Reverb"
+predelay_msec = 490.0
+predelay_feedback = 0.98
+room_size = 1.0
+wet = 0.72
+
+[sub_resource type="AudioEffectDelay" id="AudioEffectDelay_5o3iw"]
+resource_name = "Delay"
+tap1_delay_ms = 460.0
+tap1_level_db = -30.3
+tap2_active = false
+feedback_delay_ms = 1000.0
+feedback_level_db = -11.14
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectReverb_nmmkb")
+bus/0/effect/0/enabled = false
+bus/0/effect/1/effect = SubResource("AudioEffectPitchShift_mnhrq")
+bus/0/effect/1/enabled = false
+bus/1/name = &"Reverb"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/1/effect/0/effect = SubResource("AudioEffectReverb_kiq08")
+bus/1/effect/0/enabled = true
+bus/2/name = &"Delay"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectDelay_5o3iw")
+bus/2/effect/0/enabled = true

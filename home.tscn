@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bll278ihui483"]
+
+[ext_resource type="Texture2D" uid="uid://traith2ndjta" path="res://img/bg_1_lines.png" id="1_sgshk"]
+[ext_resource type="Texture2D" uid="uid://3kce6uf787f5" path="res://img/title.png" id="2_oc0hk"]
+[ext_resource type="Texture2D" uid="uid://c8wjjprowvut7" path="res://img/play_button.png" id="3_j1vvb"]
+[ext_resource type="Texture2D" uid="uid://wh010cao06sb" path="res://img/exit_button.png" id="4_igxgq"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_sgshk")
+centered = false
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(96, 40)
+texture = ExtResource("2_oc0hk")
+
+[node name="PlayButton" type="Sprite2D" parent="."]
+position = Vector2(0, 10)
+texture = ExtResource("3_j1vvb")
+centered = false
+
+[node name="ExitButton" type="Sprite2D" parent="."]
+position = Vector2(0, 24)
+texture = ExtResource("4_igxgq")
+centered = false
