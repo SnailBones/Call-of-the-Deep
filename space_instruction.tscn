@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciwi5ryj4p41p"]
+[gd_scene load_steps=6 format=3 uid="uid://ciwi5ryj4p41p"]
 
 [ext_resource type="Texture2D" uid="uid://jlokfp6ccx51" path="res://img/space bar instruct.png" id="1_ixfku"]
+[ext_resource type="Texture2D" uid="uid://dnx7ali383g27" path="res://img/repeat instruct.png" id="2_v4hxa"]
 
 [sub_resource type="Animation" id="Animation_5oi1g"]
 length = 0.001
@@ -47,6 +48,17 @@ scale = Vector2(0.838542, 0.703704)
 texture = ExtResource("1_ixfku")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="instruction sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_vudk8")
+}
+autoplay = "pressSpaceAnim"
+
+[node name="instruction sprite2" type="Sprite2D" parent="."]
+position = Vector2(92, 41)
+scale = Vector2(0.838542, 0.703704)
+texture = ExtResource("2_v4hxa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="instruction sprite2"]
 libraries = {
 "": SubResource("AnimationLibrary_vudk8")
 }
