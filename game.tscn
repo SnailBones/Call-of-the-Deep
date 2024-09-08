@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqh3cfijfh7xv"]
+[gd_scene load_steps=8 format=3 uid="uid://cqh3cfijfh7xv"]
 
 [ext_resource type="PackedScene" uid="uid://cth0hl0epy3dw" path="res://characters/player.tscn" id="1_0cvso"]
 [ext_resource type="PackedScene" uid="uid://b4dk1l8rdk748" path="res://characters/monster.tscn" id="2_bmcv0"]
+[ext_resource type="Texture2D" uid="uid://2ug6wht1iov3" path="res://img/parallax-bg-bottom.png" id="3_d6bl8"]
+[ext_resource type="Texture2D" uid="uid://ddgexv17iep5v" path="res://img/parallax-bg-midbottom.png" id="4_1d882"]
+[ext_resource type="Texture2D" uid="uid://fp5oif4qpo6v" path="res://img/parallax-bg-midtop.png" id="5_d1b1b"]
+[ext_resource type="Texture2D" uid="uid://cstvoyng4xpqb" path="res://img/parallax-bg-top.png" id="6_vbtqo"]
+
+[sub_resource type="GDScript" id="GDScript_jmsap"]
+script/source = "extends ParallaxBackground
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	scroll_offset.y -= -30 * delta
+"
 
 [node name="Node2D" type="Node2D"]
 
@@ -10,3 +28,33 @@ position = Vector2(93, 74)
 
 [node name="Monster" parent="." instance=ExtResource("2_bmcv0")]
 position = Vector2(52, 14)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = SubResource("GDScript_jmsap")
+
+[node name="Parallax-bg-bottom" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(96, -53)
+texture = ExtResource("3_d6bl8")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(2.08189e-12, 324)
+
+[node name="Parallax-bg-midbottom" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(96, -54)
+texture = ExtResource("4_1d882")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(2.08189e-12, 324)
+
+[node name="Parallax-bg-midtop" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(96, -55)
+texture = ExtResource("5_d1b1b")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2.08189e-12, 324)
+
+[node name="Parallax-bg-midtop" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(95, -55)
+texture = ExtResource("6_vbtqo")
