@@ -66,6 +66,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_1sil7"]
 resource_name = "wormReveal"
 length = 4.0
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
