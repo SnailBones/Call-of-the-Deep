@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 		elif !rythm.is_empty(): # play the next song in the note
 			var note = tune.pop_front()+monster.transpose
 			var noteLength = rythm.pop_front()
-			currentTime += (noteLength / (monster.bpm / 60.0));
+			currentTime += (noteLength * 4.0/ (monster.bpm / 60.0));
 			singer.sing(note)
 		elif !waiting: # done song. Now we wait.
 			waiting = true

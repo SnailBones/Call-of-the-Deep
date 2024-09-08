@@ -32,7 +32,7 @@ func onPlayerSing() -> void:
 			player.hitNote(note) 
 		# Otherwise, check if time since last note is close enough
 		else:
-			var trueLength = noteLength / (monsterMan.monster.bpm / 60.0)
+			var trueLength = noteLength * 4.0 / (monsterMan.monster.bpm / 60.0)
 			var difference = abs(time - trueLength);
 			print("note was", trueLength, "your time was", time)
 			print("error of ", abs(time - trueLength))

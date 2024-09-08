@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c61rwceobuaet" path="res://img/small monster legs 1.png" id="2_v1vdc"]
 [ext_resource type="Texture2D" uid="uid://bfg7suvrjgxi7" path="res://img/small monster legs 2.png" id="3_343cg"]
 [ext_resource type="PackedScene" uid="uid://c8bbmtut8syk7" path="res://characters/singer.tscn" id="4_ib1xx"]
-[ext_resource type="AudioStream" uid="uid://c4ph7b3nxnjpk" path="res://sounds/cello.wav" id="5_xunq5"]
+[ext_resource type="AudioStream" uid="uid://cdqynvi6bp70y" path="res://sounds/squidchirp.wav" id="6_qyxmx"]
 
 [sub_resource type="Animation" id="Animation_p12dr"]
 length = 0.001
@@ -78,6 +78,7 @@ _data = {
 
 [node name="squidMonster" type="CharacterBody2D"]
 script = ExtResource("1_b761e")
+songCount = 3
 
 [node name="squid monster" type="Sprite2D" parent="."]
 position = Vector2(94, 31)
@@ -102,4 +103,4 @@ shape = SubResource("CapsuleShape2D_noh45")
 
 [node name="Singer" parent="." instance=ExtResource("4_ib1xx")]
 position = Vector2(95, 25)
-stream = ExtResource("5_xunq5")
+stream = ExtResource("6_qyxmx")
