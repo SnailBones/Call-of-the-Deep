@@ -1,4 +1,5 @@
 extends AudioStreamPlayer2D
+class_name Singer
 
 const WAVE = preload("res://characters/wave.tscn")
 #const WAVE_COUNT = 240
@@ -17,12 +18,15 @@ func playNote(note):
 	#player.volume_db = vol-40+2/pitch # play lower notes louder
 	play()
 
-func sing(note = 0):
+func sing(note = 0.0, color=null):
 		playNote(note)
 		for i in WAVE_COUNT:
 			var wave = WAVE.instantiate()
-			var rotation = float(i) / WAVE_COUNT * 360
-			var direction = Vector2.UP.rotated(rotation)
+			var rot = float(i) / WAVE_COUNT * 360
+			var direction = Vector2.UP.rotated(rot)
 			wave.position = direction*SPAWN_DISTANCE
 			wave.velocity = direction*SPEED
+			#wave.rotation = direction.angle()
+			if color:
+				wave.setColor(color)
 			add_child(wave)

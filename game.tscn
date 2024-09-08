@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqh3cfijfh7xv"]
+[gd_scene load_steps=9 format=3 uid="uid://cqh3cfijfh7xv"]
 
 [ext_resource type="PackedScene" uid="uid://cth0hl0epy3dw" path="res://characters/player.tscn" id="1_0cvso"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_0yhix"]
 [ext_resource type="PackedScene" uid="uid://b4dk1l8rdk748" path="res://characters/monster.tscn" id="2_bmcv0"]
 [ext_resource type="Texture2D" uid="uid://2ug6wht1iov3" path="res://img/parallax-bg-bottom.png" id="3_d6bl8"]
 [ext_resource type="Texture2D" uid="uid://ddgexv17iep5v" path="res://img/parallax-bg-midbottom.png" id="4_1d882"]
@@ -22,6 +23,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_0yhix")
 
 [node name="Player" parent="." instance=ExtResource("1_0cvso")]
 position = Vector2(93, 74)

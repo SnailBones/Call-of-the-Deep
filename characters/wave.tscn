@@ -27,6 +27,6 @@ offset_right = 1.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.054902, 0.129412, 0.313726, 1)
+color = Color(1, 1, 1, 0.105882)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

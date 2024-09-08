@@ -1,26 +1,22 @@
 extends CharacterBody2D
+var hits = -1
 
-const RANGE = 500
-var total_distance = 0;
+func setColor(color:Color)->void:
+	$ColorRect.color = color
 
 func _physics_process(delta: float) -> void:
 
-	#var direction = Vector2.UP.rotated(rotation)
-	#var distance = linear_velocity.length() * delta
-	#position += direction * distance
-	#var collision_info = move_and_collide(direction*distance)
 	var collision = move_and_collide(velocity*delta)
 	if collision:
-		velocity = velocity.bounce(collision.get_normal())
-		#rotation = velocity.angle()
-	#total_distance += distance
+		if hits != -1: # Exclude counting collisions with spawning object by staying in special state until no collisions
+			velocity = velocity.bounce(collision.get_normal())
+			collision.get_collider_id()
+			hits = hits + 1
+			if hits > 1:
+				queue_free()
+	elif hits == -1:
+		hits = 0;
 	rotation = velocity.angle()
-	if total_distance > RANGE:
-		queue_free()
-
-#
-#func _on_body_entered(body):
-	#queue_free();
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free();
