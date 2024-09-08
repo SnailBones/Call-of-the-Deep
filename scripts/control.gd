@@ -16,8 +16,7 @@ var bpm: float = 60
 var failedSong = false;
 
 @onready var player: Player = $Player
-@onready var monster1: MonsterManager = $MonsterMan
-@onready  var monster = monster1
+@onready var monsterMan: MonsterManager = $MonsterMan
 
 func _ready(): 
 	player.sing_signal.connect(onPlayerSing)
@@ -33,7 +32,7 @@ func onPlayerSing() -> void:
 			player.hitNote(note) 
 		# Otherwise, check if time since last note is close enough
 		else:
-			var trueLength = noteLength / (monster.BPM / 60.0)
+			var trueLength = noteLength / (monsterMan.monster.bpm / 60.0)
 			var difference = abs(time - trueLength);
 			print("note was", trueLength, "your time was", time)
 			print("error of ", abs(time - trueLength))
@@ -57,16 +56,16 @@ func onPlayerSing() -> void:
 				print("passed song!")
 				songNumber += 1
 				time = 0;
-			if songNumber > monster.SONG_COUNT: # Completed all songs
+			if songNumber > monsterMan.monster.songCount: # Completed all songs
 				songNumber = 0
 				monsterNumber += 1 
 				print("incrementing monster")
 
 func startSong():
 	# Load song from monster
-	tune = monster.getTune(songNumber)
-	rythm = monster.getRythm(songNumber)
-	monster.awaken(tune, rythm, monsterNumber) # Monster starts to sing
+	tune = monsterMan.getTune(songNumber)
+	rythm = monsterMan.getRythm(songNumber)
+	monsterMan.awaken(tune, rythm, monsterNumber) # Monster starts to sing
 
 func _physics_process(delta: float) -> void:
 	time += delta
@@ -74,7 +73,7 @@ func _physics_process(delta: float) -> void:
 		if time > TIME_BETWEEN_MONSTERS:
 			songNumber = 1
 	else: # briefest break between songs
-		if monster.isResting() && !playerSinging && time > TIME_BETWEEN_SONGS:
+		if monsterMan.isResting() && !playerSinging && time > TIME_BETWEEN_SONGS:
 			startSong() 
 		# If player gets it correctly, move on to next monster song
 

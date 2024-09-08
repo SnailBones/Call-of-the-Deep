@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ble5g4hk4clia"]
+[gd_scene load_steps=10 format=3 uid="uid://ble5g4hk4clia"]
 
 [ext_resource type="Texture2D" uid="uid://psox272xn15r" path="res://img/end monster head shaded.png" id="1_1cdk3"]
+[ext_resource type="Script" path="res://scripts/monster.gd" id="1_86hot"]
 [ext_resource type="Texture2D" uid="uid://cyre4pfwynu0h" path="res://img/end monster jaw shaded.png" id="2_t8t2c"]
 [ext_resource type="Script" path="res://animation_player.gd" id="3_41jhx"]
 [ext_resource type="PackedScene" uid="uid://c8bbmtut8syk7" path="res://characters/singer.tscn" id="4_0pohl"]
-[ext_resource type="AudioStream" uid="uid://c4ph7b3nxnjpk" path="res://sounds/cello.wav" id="5_hupsi"]
+[ext_resource type="AudioStream" uid="uid://5ywrehigb8qa" path="res://sounds/gong.wav" id="6_j5rvh"]
 
 [sub_resource type="Animation" id="Animation_piyx6"]
 length = 0.001
@@ -68,6 +69,8 @@ _data = {
 }
 
 [node name="MawMonster" type="CharacterBody2D"]
+script = ExtResource("1_86hot")
+monsterID = 3
 
 [node name="maw monster" type="Sprite2D" parent="."]
 position = Vector2(95, 55)
@@ -85,4 +88,4 @@ script = ExtResource("3_41jhx")
 
 [node name="Singer" parent="." instance=ExtResource("4_0pohl")]
 position = Vector2(95, 46)
-stream = ExtResource("5_hupsi")
+stream = ExtResource("6_j5rvh")
