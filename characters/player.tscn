@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fjm0f"]
 [ext_resource type="Texture2D" uid="uid://d05riu45xosh8" path="res://img/sub_small.png" id="2_ay2rg"]
 [ext_resource type="PackedScene" uid="uid://c8bbmtut8syk7" path="res://characters/singer.tscn" id="4_60w6t"]
-[ext_resource type="AudioStream" uid="uid://kalneyhrp685" path="res://sounds/drum.wav" id="4_t0rqo"]
+[ext_resource type="AudioStream" uid="uid://brf3v53ntvbpk" path="res://sounds/Sub Sonar Beep 2.wav" id="4_sg6e8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4itm"]
 radius = 5.0
@@ -18,4 +18,4 @@ texture = ExtResource("2_ay2rg")
 shape = SubResource("CircleShape2D_b4itm")
 
 [node name="Singer" parent="." instance=ExtResource("4_60w6t")]
-stream = ExtResource("4_t0rqo")
+stream = ExtResource("4_sg6e8")

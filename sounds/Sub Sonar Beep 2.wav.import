@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://brf3v53ntvbpk"
+path="res://.godot/imported/Sub Sonar Beep 2.wav-85410e0fa525a8482b5ab8a88d9e9300.sample"
+
+[deps]
+
+source_file="res://sounds/Sub Sonar Beep 2.wav"
+dest_files=["res://.godot/imported/Sub Sonar Beep 2.wav-85410e0fa525a8482b5ab8a88d9e9300.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

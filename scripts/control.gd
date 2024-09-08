@@ -9,8 +9,8 @@ var noteLength = 0 # Tracking currently played note
 var monsterNumber = 1 # 1st, 2nd, or third monster.
 var songNumber = 0 # Monster song number. 0 is between monsters.
 var fails = 0
-var tune
-var rythm
+var tune = []
+var rythm = []
 var playerSinging = false
 var bpm: float = 60
 var failedSong = false;
