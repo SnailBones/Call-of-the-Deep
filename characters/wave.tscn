@@ -1,20 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqhxb3ldor8ti"]
+[gd_scene load_steps=3 format=3 uid="uid://dqhxb3ldor8ti"]
 
 [ext_resource type="Script" path="res://scripts/wave.gd" id="1_r1ij4"]
-[ext_resource type="Texture2D" uid="uid://d05riu45xosh8" path="res://img/sub_small.png" id="2_qkj25"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qs8rs"]
 radius = 3.0
 
-[node name="Wave" type="Area2D"]
+[node name="Wave" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_r1ij4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_qs8rs")
-
-[node name="SubSmall" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("2_qkj25")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 scale = Vector2(0.240001, 0.24)
@@ -25,10 +21,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -3.0
-offset_top = -1.0
-offset_right = 3.0
-offset_bottom = 1.0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = 1.0
+offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.054902, 0.129412, 0.313726, 1)
