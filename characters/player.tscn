@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cth0hl0epy3dw"]
+[gd_scene load_steps=6 format=3 uid="uid://cth0hl0epy3dw"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_fjm0f"]
 [ext_resource type="Texture2D" uid="uid://d05riu45xosh8" path="res://img/sub_small.png" id="2_ay2rg"]
 [ext_resource type="AudioStream" uid="uid://bt3tnmrxwy34x" path="res://sounds/Sub Sonar Beep 2.mp3" id="3_s7p6j"]
+[ext_resource type="PackedScene" uid="uid://c8bbmtut8syk7" path="res://characters/singer.tscn" id="4_60w6t"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b4itm"]
 radius = 5.0
@@ -16,6 +17,5 @@ texture = ExtResource("2_ay2rg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_b4itm")
 
-[node name="Beep" type="AudioStreamPlayer" parent="."]
+[node name="Singer" parent="." instance=ExtResource("4_60w6t")]
 stream = ExtResource("3_s7p6j")
-bus = &"Delay"

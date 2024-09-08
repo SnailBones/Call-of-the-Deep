@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://cqh3cfijfh7xv"]
+[gd_scene load_steps=3 format=3 uid="uid://cqh3cfijfh7xv"]
 
 [ext_resource type="PackedScene" uid="uid://cth0hl0epy3dw" path="res://characters/player.tscn" id="1_0cvso"]
+[ext_resource type="PackedScene" uid="uid://b4dk1l8rdk748" path="res://characters/monster.tscn" id="2_bmcv0"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_0cvso")]
 position = Vector2(93, 74)
+
+[node name="Monster" parent="." instance=ExtResource("2_bmcv0")]
+position = Vector2(52, 14)

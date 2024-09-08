@@ -16,6 +16,7 @@ grow_vertical = 2
 [node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_sgshk")
 centered = false
+metadata/_edit_lock_ = true
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(96, 40)
