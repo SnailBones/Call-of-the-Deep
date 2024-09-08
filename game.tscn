@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cth0hl0epy3dw" path="res://characters/player.tscn" id="1_0cvso"]
 [ext_resource type="Script" path="res://scripts/control.gd" id="1_0yhix"]
-[ext_resource type="PackedScene" uid="uid://b4dk1l8rdk748" path="res://characters/monster.tscn" id="2_bmcv0"]
+[ext_resource type="PackedScene" uid="uid://b4dk1l8rdk748" path="res://characters/monster_man.tscn" id="2_bmcv0"]
 [ext_resource type="Texture2D" uid="uid://2ug6wht1iov3" path="res://img/parallax-bg-bottom.png" id="3_d6bl8"]
 [ext_resource type="Texture2D" uid="uid://ddgexv17iep5v" path="res://img/parallax-bg-midbottom.png" id="4_1d882"]
 [ext_resource type="Texture2D" uid="uid://fp5oif4qpo6v" path="res://img/parallax-bg-midtop.png" id="5_d1b1b"]
@@ -26,11 +26,10 @@ func _process(delta: float) -> void:
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0yhix")
 
+[node name="MonsterMan" parent="." instance=ExtResource("2_bmcv0")]
+
 [node name="Player" parent="." instance=ExtResource("1_0cvso")]
 position = Vector2(93, 74)
-
-[node name="Monster" parent="." instance=ExtResource("2_bmcv0")]
-position = Vector2(52, 14)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 script = SubResource("GDScript_jmsap")

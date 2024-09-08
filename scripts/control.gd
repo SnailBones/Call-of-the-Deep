@@ -16,7 +16,7 @@ var bpm: float = 60
 var failedSong = false;
 
 @onready var player: Player = $Player
-@onready var monster1: Monster = $Monster
+@onready var monster1: MonsterManager = $MonsterMan
 @onready  var monster = monster1
 
 func _ready(): 
@@ -57,15 +57,16 @@ func onPlayerSing() -> void:
 				print("passed song!")
 				songNumber += 1
 				time = 0;
-			if songNumber > 3: # Completed all songs
+			if songNumber > monster.SONG_COUNT: # Completed all songs
 				songNumber = 0
 				monsterNumber += 1 
+				print("incrementing monster")
 
 func startSong():
 	# Load song from monster
 	tune = monster.getTune(songNumber)
 	rythm = monster.getRythm(songNumber)
-	monster.awaken(tune, rythm) # Monster starts to sing
+	monster.awaken(tune, rythm, monsterNumber) # Monster starts to sing
 
 func _physics_process(delta: float) -> void:
 	time += delta
