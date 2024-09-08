@@ -1,7 +1,7 @@
 extends Node2D
 
-const TIME_BETWEEN_MONSTERS = 1 # Atmospheric break between monsters.
-const TIME_BETWEEN_SONGS = 1 # How quickly monster replies after a sucessful or failed song.
+const TIME_BETWEEN_MONSTERS = 5 # Atmospheric break between monsters.
+const TIME_BETWEEN_SONGS = 2 # How quickly monster replies after a sucessful or failed song.
 const NOTE_FORGIVENESS = .2 # How innacurate can note timing be
 const MAX_FAILS = 3 # Monster kills you on third fail
 var time = 0
@@ -50,7 +50,8 @@ func onPlayerSing() -> void:
 				fails += 1 
 				failedSong = false;
 				# TODO: angry monster roar here	
-				if fails == MAX_FAILS:  
+				if fails == MAX_FAILS:
+					print("die!")
 					die();		
 			else:
 				print("passed song!")
@@ -59,6 +60,7 @@ func onPlayerSing() -> void:
 			if songNumber > monsterMan.monster.songCount: # Completed all songs
 				songNumber = 0
 				monsterNumber += 1 
+				fails = 0
 				print("incrementing monster")
 
 func startSong():
@@ -78,4 +80,5 @@ func _physics_process(delta: float) -> void:
 		# If player gets it correctly, move on to next monster song
 
 func die():
-	print("TODO: you died!")
+   # todo: death noises	
+	get_tree().change_scene_to_file("res://dead.tscn")
