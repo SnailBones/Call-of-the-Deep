@@ -6,8 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://2qm1etf82su1" path="res://img/middle monster smallest teeth.png" id="3_y65i3"]
 [ext_resource type="Script" path="res://animation_player.gd" id="4_xmyf7"]
 [ext_resource type="PackedScene" uid="uid://c8bbmtut8syk7" path="res://characters/singer.tscn" id="6_c2y76"]
-[ext_resource type="AudioStream" uid="uid://cb1w5k8rwg07i" path="res://sounds/digeridoo.wav" id="7_kl1ft"]
+
 [ext_resource type="AudioStream" uid="uid://cthnq0h6c81nf" path="res://sounds/Worm Angry Sound.wav" id="8_lkm2l"]
+[ext_resource type="AudioStream" uid="uid://5l5uohqv4sn3" path="res://sounds/wormkalimba.wav" id="7_p0ak5"]
+
 
 [sub_resource type="Animation" id="Animation_kjmbw"]
 length = 0.001
@@ -91,8 +93,8 @@ _data = {
 [node name="wormMonster" type="CharacterBody2D"]
 script = ExtResource("1_86jaj")
 monsterID = 2
-bpm = 393
-transpose = -8
+bpm = 70
+songCount = 3
 
 [node name="worm monster" type="Sprite2D" parent="."]
 position = Vector2(94, 31)
@@ -115,7 +117,8 @@ script = ExtResource("4_xmyf7")
 
 [node name="Singer" parent="." instance=ExtResource("6_c2y76")]
 position = Vector2(95, 30)
-stream = ExtResource("7_kl1ft")
 
 [node name="AngryNoise" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_lkm2l")
+stream = ExtResource("7_p0ak5")
+volume_db = 2.0
