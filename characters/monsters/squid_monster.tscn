@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bvn2vay6t4tph"]
+[gd_scene load_steps=12 format=3 uid="uid://bvn2vay6t4tph"]
 
 [ext_resource type="Script" path="res://scripts/monster.gd" id="1_b761e"]
 [ext_resource type="Texture2D" uid="uid://b1kr14ncohasj" path="res://img/small monster body.png" id="1_qfh80"]
 [ext_resource type="Texture2D" uid="uid://c61rwceobuaet" path="res://img/small monster legs 1.png" id="2_v1vdc"]
 [ext_resource type="Texture2D" uid="uid://bfg7suvrjgxi7" path="res://img/small monster legs 2.png" id="3_343cg"]
 [ext_resource type="PackedScene" uid="uid://c8bbmtut8syk7" path="res://characters/singer.tscn" id="4_ib1xx"]
-
-[ext_resource type="AudioStream" uid="uid://ddt01ttwchsjw" path="res://sounds/Squid Angry Noise.wav" id="7_2ketg"]
 [ext_resource type="AudioStream" uid="uid://cdqynvi6bp70y" path="res://sounds/squidchirp.wav" id="6_qyxmx"]
 
 [sub_resource type="Animation" id="Animation_p12dr"]
@@ -105,8 +103,7 @@ shape = SubResource("CapsuleShape2D_noh45")
 
 [node name="Singer" parent="." instance=ExtResource("4_ib1xx")]
 position = Vector2(95, 25)
+stream = ExtResource("6_qyxmx")
 
 [node name="AngryNoise" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_2ketg")
-
 stream = ExtResource("6_qyxmx")

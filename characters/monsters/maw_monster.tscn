@@ -5,8 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://cyre4pfwynu0h" path="res://img/end monster jaw shaded.png" id="2_t8t2c"]
 [ext_resource type="Script" path="res://animation_player.gd" id="3_41jhx"]
 [ext_resource type="PackedScene" uid="uid://c8bbmtut8syk7" path="res://characters/singer.tscn" id="4_0pohl"]
-
-[ext_resource type="AudioStream" uid="uid://cjrc2f7d7c1er" path="res://sounds/Maw Angry Noise.wav" id="7_1oh4q"]
 [ext_resource type="AudioStream" uid="uid://bw08xg6uel17p" path="res://sounds/mawchime.wav" id="6_2s62b"]
 
 [sub_resource type="Animation" id="Animation_3pcct"]
@@ -136,9 +134,8 @@ script = ExtResource("3_41jhx")
 
 [node name="Singer" parent="." instance=ExtResource("4_0pohl")]
 position = Vector2(95, 46)
-
+stream = ExtResource("6_2s62b")
 
 [node name="AngryNoise" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_1oh4q")
 stream = ExtResource("6_2s62b")
 volume_db = 1.0
