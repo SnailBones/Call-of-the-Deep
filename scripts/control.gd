@@ -47,6 +47,7 @@ func onPlayerSing() -> void:
 			playerSinging = false;
 			if failedSong:
 				print("failed song")
+				monsterMan.playAngryNoise()
 				fails += 1 
 				failedSong = false;
 				# TODO: angry monster roar here	

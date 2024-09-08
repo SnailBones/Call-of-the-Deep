@@ -10,6 +10,7 @@ var currentTime = -1
 var monsterNum = 1
 #var singing = false
 var singer
+var angryNoise: AudioStreamPlayer2D
 
 
 var monster = null
@@ -26,11 +27,10 @@ func switchMonster(n: int):
 		monster = monster3.instantiate()
 	add_child(monster)
 	singer = monster.get_node("Singer")
+	angryNoise = monster.get_node("AngryNoise")
 
 func _ready() -> void:
-	monster = monster1.instantiate()
-	add_child(monster)
-	singer = monster.get_node("Singer")
+	switchMonster(1)
 
 func _physics_process(delta: float) -> void:
 	if (currentTime != -1): # if not paused
@@ -64,6 +64,9 @@ func awaken(t, r, n):
 		switchMonster(n)
 	tune = t.duplicate()
 	rythm = r.duplicate()
+
+func playAngryNoise():
+	angryNoise.play()
 	
 func getTune(n):
 	return monster.getTune(n)

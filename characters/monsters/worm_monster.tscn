@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bq2jxjhdr4ui2"]
+[gd_scene load_steps=13 format=3 uid="uid://bq2jxjhdr4ui2"]
 
 [ext_resource type="Texture2D" uid="uid://bid6jbi1rteex" path="res://img/middle monster exterior no shade.png" id="1_01wp3"]
 [ext_resource type="Script" path="res://scripts/monster.gd" id="1_86jaj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://animation_player.gd" id="4_xmyf7"]
 [ext_resource type="PackedScene" uid="uid://c8bbmtut8syk7" path="res://characters/singer.tscn" id="6_c2y76"]
 [ext_resource type="AudioStream" uid="uid://cb1w5k8rwg07i" path="res://sounds/digeridoo.wav" id="7_kl1ft"]
+[ext_resource type="AudioStream" uid="uid://cthnq0h6c81nf" path="res://sounds/Worm Angry Sound.wav" id="8_lkm2l"]
 
 [sub_resource type="Animation" id="Animation_kjmbw"]
 length = 0.001
@@ -115,3 +116,6 @@ script = ExtResource("4_xmyf7")
 [node name="Singer" parent="." instance=ExtResource("6_c2y76")]
 position = Vector2(95, 30)
 stream = ExtResource("7_kl1ft")
+
+[node name="AngryNoise" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_lkm2l")
