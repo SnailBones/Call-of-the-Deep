@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://ciwi5ryj4p41p"]
+
+[ext_resource type="Texture2D" uid="uid://jlokfp6ccx51" path="res://img/space bar instruct.png" id="1_ixfku"]
+
+[sub_resource type="Animation" id="Animation_5oi1g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.838542, 0.703704)]
+}
+
+[sub_resource type="Animation" id="Animation_nn4x3"]
+resource_name = "pressSpaceAnim"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.838542, 0.703704), Vector2(0.7, 0.587)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vudk8"]
+_data = {
+"RESET": SubResource("Animation_5oi1g"),
+"pressSpaceAnim": SubResource("Animation_nn4x3")
+}
+
+[node name="space instruction" type="Node2D"]
+
+[node name="instruction sprite" type="Sprite2D" parent="."]
+position = Vector2(91, 74)
+scale = Vector2(0.838542, 0.703704)
+texture = ExtResource("1_ixfku")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="instruction sprite"]
+libraries = {
+"": SubResource("AnimationLibrary_vudk8")
+}
+autoplay = "pressSpaceAnim"
