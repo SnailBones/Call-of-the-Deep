@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://cqh3cfijfh7xv"]
+[gd_scene load_steps=34 format=3 uid="uid://cqh3cfijfh7xv"]
 
 [ext_resource type="PackedScene" uid="uid://cth0hl0epy3dw" path="res://characters/player.tscn" id="1_0cvso"]
+[ext_resource type="Script" path="res://scripts/control.gd" id="1_0yhix"]
 [ext_resource type="PackedScene" uid="uid://b4dk1l8rdk748" path="res://characters/monster.tscn" id="2_bmcv0"]
 [ext_resource type="Texture2D" uid="uid://2ug6wht1iov3" path="res://img/parallax-bg-bottom.png" id="3_d6bl8"]
 [ext_resource type="Texture2D" uid="uid://ddgexv17iep5v" path="res://img/parallax-bg-midbottom.png" id="4_1d882"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b1kr14ncohasj" path="res://img/small monster body.png" id="7_hj6jl"]
 [ext_resource type="Texture2D" uid="uid://psox272xn15r" path="res://img/end monster head shaded.png" id="7_q8bns"]
 [ext_resource type="Texture2D" uid="uid://c61rwceobuaet" path="res://img/small monster legs 1.png" id="8_8befc"]
+[ext_resource type="AudioStream" uid="uid://d0ef28pctkdfj" path="res://sounds/Ambient-Sound.ogg" id="8_l2o3v"]
 [ext_resource type="Texture2D" uid="uid://cyre4pfwynu0h" path="res://img/end monster jaw shaded.png" id="8_mbi7m"]
 [ext_resource type="Script" path="res://animation_player.gd" id="9_8akfc"]
 [ext_resource type="Texture2D" uid="uid://bfg7suvrjgxi7" path="res://img/small monster legs 2.png" id="9_cay7j"]
@@ -262,9 +264,9 @@ func _process(delta: float) -> void:
 "
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_0yhix")
 
 [node name="maw monster" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(95, 55)
 texture = ExtResource("7_q8bns")
 
@@ -279,7 +281,6 @@ autoplay = "mawReveal"
 script = ExtResource("9_8akfc")
 
 [node name="worm monster" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(94, 31)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_20ck7")
@@ -300,7 +301,6 @@ autoplay = "idleWorm"
 script = ExtResource("9_8akfc")
 
 [node name="squid monster" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(94, 31)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_hj6jl")
@@ -321,7 +321,6 @@ autoplay = "idle"
 position = Vector2(93, 74)
 
 [node name="Monster" parent="." instance=ExtResource("2_bmcv0")]
-visible = false
 position = Vector2(52, 14)
 
 [node name="instruction sprite" type="Sprite2D" parent="."]
@@ -366,3 +365,8 @@ motion_mirroring = Vector2(2.08189e-12, 324)
 [node name="Parallax-bg-midtop" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(95, -55)
 texture = ExtResource("6_vbtqo")
+
+[node name="Ambient-sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_l2o3v")
+volume_db = -0.3
+autoplay = true
